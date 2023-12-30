@@ -13,7 +13,7 @@ public class _00_ArrayListDemo {
         names.add("Jan");
         names.add("Sara");
         names.add("Fred");
-        names.add("Marc");
+        names.add("Marcy");
 
         /*
          * Iterating through list with a standard for-loop
