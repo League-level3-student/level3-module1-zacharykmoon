@@ -12,13 +12,38 @@ public class LongChipCompetition {
      * your search.
      */
     private ArrayList<Beatle> theBeatles = new ArrayList<Beatle>();
+    int largestChip;
+    double largestChipSize;
 
     public static void main(String[] args) {
         LongChipCompetition lcc = new LongChipCompetition();
+   lcc.initializeBeatles();
+   lcc.longChipCompetition();
 
     }
 
-    private void initializeBeatles() {
+    private void longChipCompetition() {
+		// TODO Auto-generated method stub
+    	largestChip = 0;
+    	largestChipSize = 0;
+    	
+    	for (int i = 0; i < theBeatles.size(); i++)
+    	{
+    		for (int j = 0; j < theBeatles.get(i).getChips().size(); j++)
+    		{
+    			if (theBeatles.get(i).getChips().get(j).getLength() > largestChipSize)
+    			{
+    				largestChipSize = theBeatles.get(i).getChips().get(j).getLength();
+    				largestChip = i;
+    			}
+    		}
+    	}
+    	System.out.println(theBeatles.get(largestChip).getName()+" had the largest chip");
+
+		
+	}
+
+	private void initializeBeatles() {
         Beatle george = new Beatle("George");
         Beatle john = new Beatle("John");
         Beatle paul = new Beatle("Paul");
